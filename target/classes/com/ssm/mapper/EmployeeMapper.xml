@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.EmployeeMapper">
+
+<!--       List<Employee> getAllEmployee();-->
+    <select id="getAllEmployee" resultType="Employee">
+        select * from t_emp
+    </select>
+<!--            Employee getEmployeeById(@Param("id") Integer id);-->
+    <select id="getEmployeeById" resultType="Employee">
+        select * from t_emp where emp_id=#{id}
+    </select>
+<!--        void addEmployee(Employee employee);-->
+    <insert id="addEmployee">
+        insert into t_emp values (null,#{empName},#{age},#{gender},#{email})
+    </insert>
+<!--        void saveEmployee(Employee employee);-->
+    <update id="saveEmployee">
+        update t_emp set emp_name=#{empName},age=#{age},gender=#{gender},email=#{email}
+        where emp_id=#{empId}
+    </update>
+<!--         void deleteEmployee(@Param("id") Integer id);-->
+    <delete id="deleteEmployee">
+        delete from t_emp where emp_id=#{id}
+    </delete>
+</mapper>

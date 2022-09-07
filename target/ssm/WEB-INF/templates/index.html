@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<tr>
+    <h1> 我是首页!</h1>
+</tr>
+<tr>
+    <a th:href="@{/employee}">查询所有的员工信息</a><br>
+    <hr>
+</tr>
+<tr>
+    <a th:href="@{/employee/page/1}">分页查询用户信息</a><br>
+    <hr>
+</tr>
+
+<tr>
+    <a th:href="@{/employee/2}">查询单个用户信息</a><br>
+    <hr>
+</tr>
+<tr>
+    <a th:href="@{/employee/addIndex}">添加用户信息</a><br>
+    <hr>
+</tr>
+<tr>
+    <a th:href="@{/employee}">修改员工信息</a>
+</tr>
+</body>
+</html>
